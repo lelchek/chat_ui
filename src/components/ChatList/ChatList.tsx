@@ -1,6 +1,6 @@
-import { Status } from 'components/ChatList/components/ChatItem/types';
 import ChatItem from 'components/ChatList/components/ChatItem';
 import Assistant from 'components/ChatList/components/Assistant';
+import { Status } from 'components/ChatList/components/ChatItem/types';
 import data from 'data/tasks.json';
 import styles from './ChatList.module.scss';
 

@@ -1,0 +1,58 @@
+@import 'styles/scss/base';
+
+.root {
+  display: flex;
+  width: 100%;
+
+  &.outgoing {
+    justify-content: flex-end;
+  }
+}
+
+.container {
+  width: max-content;
+  max-width: 80%;
+}
+
+.name {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: $light-blue-1;
+}
+
+.content {
+  padding: 8px 24px;
+  background-color: $light-blue-1;
+  border-radius: 18px;
+
+  &.incoming {
+    background-color: $light-blue-1;
+    color: $dark-gray-2;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 28px;
+
+    .time {
+      color: $light-gray-2;
+    }
+  }
+
+  &.outgoing {
+    background-color: $dark-blue-2;
+    color: $light-gray-1;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 28px;
+
+    .time {
+      color: $light-blue-1;
+    }
+  }
+}
+
+.text,
+.time {
+  font-size: 0.9rem;
+}
+
+.time {
+  text-align: right;
+}

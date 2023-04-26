@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import { ChatItemProps } from 'components/ChatList/components/ChatItem/types';
 import Avatar from 'components/ChatList/components/Avatar';
+import { ChatItemProps } from './types';
 import styles from './ChatItem.module.scss';
 
 const ChatItem = ({

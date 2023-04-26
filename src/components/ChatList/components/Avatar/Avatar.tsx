@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { AvatarProps } from 'components/ChatList/components/Avatar/types';
+import { AvatarProps } from './types';
 import styles from './Avatar.module.scss';
 
 const Avatar = ({ image, name, lastName }: AvatarProps) => {
