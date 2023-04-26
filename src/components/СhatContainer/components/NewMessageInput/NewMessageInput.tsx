@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import Icon from 'components/common/Icon';
 import { FormState } from './types';
 import styles from './NewMessageInput.module.scss';
 
@@ -23,7 +24,7 @@ const NewMessageInput = () => {
       />
 
       <button className={styles.submitButton} type="submit" disabled={!text}>
-        click
+        <Icon name="send" />
       </button>
     </form>
   );

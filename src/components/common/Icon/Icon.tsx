@@ -7,11 +7,11 @@ const ICON_NAMES = {
   send: Send,
 };
 
-export type IconName = keyof typeof ICON_NAMES;
+type IconName = keyof typeof ICON_NAMES;
 
-export type IconProps = ComponentPropsWithoutRef<'svg'> & {
+interface IconProps extends ComponentPropsWithoutRef<'svg'> {
   name: IconName;
-};
+}
 
 const Icon = ({ name, className, ...rest }: IconProps) => {
   const SvgTag = ICON_NAMES[name] as unknown as 'svg';
