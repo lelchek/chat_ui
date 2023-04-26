@@ -1,0 +1,23 @@
+@import 'styles/scss/base';
+
+.root {
+  @include flexCenter;
+
+  background-color: $dark-blue-2;
+}
+
+.root,
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.image {
+  object-fit: contain;
+  background-color: #fff;
+}
+
+.initials {
+  text-transform: uppercase;
+}

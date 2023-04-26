@@ -1,0 +1,54 @@
+@import 'styles/scss/base';
+
+.root {
+  flex-shrink: 0;
+  height: 66px;
+  background-color: $dark-gray-3;
+  position: relative;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  &.active::after,
+  &.unread::after {
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: $dark-blue-1;
+  }
+
+  &.active::after {
+    width: 4px;
+    height: 100%;
+    right: 0;
+    top: 0;
+  }
+
+  &.unread::after {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.content {
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.title,
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: $light-gray-2;
+}
