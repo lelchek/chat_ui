@@ -1,5 +1,6 @@
-import { ChatMessage } from 'components/СhatContainer/types';
 import Message from 'components/СhatContainer/components/Message';
+import NewMessageInput from 'components/СhatContainer/components/NewMessageInput';
+import { ChatMessage } from './types';
 import styles from './СhatContainer.module.scss';
 
 const data: ChatMessage[] = [
@@ -34,8 +35,7 @@ const СhatContainer = () => {
           ))}
         </ul>
 
-        {/* TODO: add input */}
-        <button>click</button>
+        <NewMessageInput />
       </div>
     </div>
   );

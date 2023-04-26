@@ -1,0 +1,31 @@
+@import 'styles/scss/base';
+
+.root {
+  position: relative;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 1px solid $dark-gray-2;
+  padding: 16px 24px;
+  background: transparent;
+  border-radius: 28px;
+  color: $light-gray-2;
+
+  &:hover {
+    border-color: $light-gray-2;
+  }
+  &:focus {
+    border-color: $light-gray-2;
+    outline: none;
+  }
+}
+
+.submitButton {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+}
