@@ -1,0 +1,158 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Font sizes
+@mixin font-size($pixels) {
+  font-size: #{$pixels}px;
+  font-size: rem($pixels);
+}
+
+@mixin line-height($pixels) {
+  line-height: #{$pixels}px;
+  line-height: rem($pixels);
+}
+
+@mixin text-h1 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0.2px;
+
+  @include font-size(52);
+  @include line-height(64);
+}
+
+@mixin text-h3 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(32);
+  @include line-height(44);
+}
+
+@mixin text-h4 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(26);
+  @include line-height(38);
+}
+
+@mixin text-h5 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(20);
+  @include line-height(32);
+}
+
+@mixin text-h6 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(18);
+  @include line-height(30);
+}
+
+@mixin text-small-navigation {
+  font-weight: $semi-bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(16);
+  @include line-height(22);
+}
+
+@mixin text-subtitle-1 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(16);
+  @include line-height(22);
+}
+
+@mixin text-subtitle-2 {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(14);
+  @include line-height(20);
+}
+
+@mixin text-button {
+  font-weight: $semi-bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(18);
+  @include line-height(24);
+}
+
+@mixin text-button-underline {
+  font-weight: $semi-bold-font-weight;
+  letter-spacing: 0.2px;
+  text-decoration: underline;
+
+  @include font-size(16);
+  @include line-height(24);
+}
+
+@mixin text-caps-button {
+  font-weight: $semi-bold-font-weight;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+
+  @include font-size(16);
+  @include line-height(24);
+}
+
+@mixin text-body-1 {
+  font-weight: $regular-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(16);
+  @include line-height(24);
+}
+
+@mixin text-body-2 {
+  font-weight: $regular-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(14);
+  @include line-height(20);
+}
+
+@mixin text-initials {
+  font-weight: $bold-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(12);
+  @include line-height(16);
+}
+
+@mixin text-small-1 {
+  font-weight: $regular-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(12);
+  @include line-height(16);
+}
+
+@mixin text-small-2 {
+  font-weight: $regular-font-weight;
+  letter-spacing: 0;
+
+  @include font-size(10);
+  @include line-height(16);
+}
+
+@mixin inline-overflow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
