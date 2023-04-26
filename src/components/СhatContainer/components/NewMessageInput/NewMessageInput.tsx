@@ -1,16 +1,15 @@
 import { useForm } from 'react-hook-form';
 import Icon from 'components/common/Icon';
-import { FormState } from './types';
+import { FormState, NewMessageInputProps } from './types';
 import styles from './NewMessageInput.module.scss';
 
-const NewMessageInput = () => {
+const NewMessageInput = ({ onSubmit }: NewMessageInputProps) => {
   const { register, handleSubmit, watch, resetField } = useForm<FormState>();
 
   const text = watch('text');
 
   const handleFormSubmit = ({ text }: FormState) => {
-    // TODO:  impement submit form
-    console.log(`value`, text);
+    onSubmit(text);
     resetField('text');
   };
 
