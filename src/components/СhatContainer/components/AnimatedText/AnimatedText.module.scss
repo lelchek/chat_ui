@@ -20,6 +20,7 @@
   width: 100%;
   left: 0;
   background-color: $light-blue-1;
+  // background-color: green;
 }
 
 .animatedMmask {
@@ -27,6 +28,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -35,6 +37,7 @@
 
 .gradientMask {
   background-color: $light-blue-1;
+  // background-color: red;
   display: block;
   height: 24px;
 }
