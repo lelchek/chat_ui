@@ -1,14 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
-import { getTextMaxHeight } from 'helpers';
 import { BASE_LINE_HEIGHT, BACKGROUND_ANIMATE_TIME } from 'constants/general';
 import { AnimatedTextProps } from './types';
 import styles from './AnimatedText.module.scss';
 
 const AnimatedText = ({
   text,
-  setMoreVisible,
+  onSetExpectedTextHeight,
   onFinished,
 }: AnimatedTextProps) => {
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -24,8 +23,8 @@ const AnimatedText = ({
 
       setMaskRows(rows > 3 ? 3 : Math.ceil(rows));
 
-      if (textHeight && textHeight > getTextMaxHeight()) {
-        setMoreVisible(true);
+      if (textHeight) {
+        onSetExpectedTextHeight(textHeight);
       }
     }, BACKGROUND_ANIMATE_TIME);
 
