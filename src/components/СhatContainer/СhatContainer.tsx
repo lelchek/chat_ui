@@ -21,11 +21,16 @@ const СhatContainer = () => {
   const [incomingMessageInProgress, setIncomingMessageInProgress] =
     useState<boolean>(false);
 
+  const scrollToBottom = () => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  };
+
   const generateIncomingMessage = async () => {
     const newMessage: ChatMessage = {
       id: messages.length + 1,
       text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-      // text: 'ktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
       type: 'incoming',
       time: getMessageTime(),
     };
@@ -43,9 +48,7 @@ const СhatContainer = () => {
   }, [incomingMessageInProgress]);
 
   useEffect(() => {
-    if (messageListRef.current) {
-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-    }
+    scrollToBottom();
   }, [messages]);
 
   const handleSendOutgoingMessage = (text: string) => {
@@ -70,7 +73,11 @@ const СhatContainer = () => {
           {messages.map(({ id, text, type, time }) => (
             <li key={id}>
               {type === 'incoming' ? (
-                <IncomingMessage text={text} time={time} />
+                <IncomingMessage
+                  text={text}
+                  time={time}
+                  scrollToBottom={scrollToBottom}
+                />
               ) : (
                 <OutgoingMessage text={text} time={time} />
               )}

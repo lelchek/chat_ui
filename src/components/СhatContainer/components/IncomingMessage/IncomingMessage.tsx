@@ -10,7 +10,11 @@ import {
 import { IncomingMessageProps } from './types';
 import styles from './IncomingMessage.module.scss';
 
-const IncomingMessage = ({ text, time }: IncomingMessageProps) => {
+const IncomingMessage = ({
+  text,
+  time,
+  scrollToBottom,
+}: IncomingMessageProps) => {
   const textContainerRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState<number>(0);
   const [containerMaxHeight, setContainerMaxHeight] = useState<number>(0);
@@ -33,6 +37,7 @@ const IncomingMessage = ({ text, time }: IncomingMessageProps) => {
   const handleSetTimeVisible = () => {
     setLastRowVisible(true);
     setContainerHeight((state) => state + LAST_ROW_LINE_HEIGHT);
+    scrollToBottom();
   };
 
   const handleSetExpectedContainerHeight = (textHeight: number) => {
@@ -48,6 +53,7 @@ const IncomingMessage = ({ text, time }: IncomingMessageProps) => {
     setMoreVisible(false);
     setContainerHeight(containerMaxHeight);
     setFullTextVisible(true);
+    scrollToBottom();
   };
 
   return (
