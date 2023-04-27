@@ -1,10 +1,12 @@
 import { ComponentPropsWithoutRef } from 'react';
 import cn from 'classnames';
 import { ReactComponent as Send } from 'images/icons/send.svg';
+import { ReactComponent as Close } from 'images/icons/close.svg';
 import styles from './Icon.module.scss';
 
 const ICON_NAMES = {
   send: Send,
+  close: Close,
 };
 
 type IconName = keyof typeof ICON_NAMES;

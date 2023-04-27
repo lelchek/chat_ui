@@ -16,16 +16,16 @@
   color: $light-gray-2;
 
   &:hover {
-    border-color: $light-gray-2;
+    border-color: $dark-blue-1;
   }
   &:focus {
-    border-color: $light-gray-2;
+    border-color: $dark-blue-1;
     outline: none;
   }
 }
 
 .loading,
-.submitButton {
+.actionButtons {
   position: absolute;
   right: 48px;
 }
@@ -34,14 +34,29 @@
   top: 46px;
 }
 
+.actionButtons {
+  top: 36px;
+  display: flex;
+  gap: 12px;
+}
+
+.clearButton,
+.submitButton {
+  @extend %button-reset;
+}
+
+.clearButton {
+  color: $light-gray-2;
+}
+
 .submitButton {
   @extend %button-reset;
 
   display: block;
-  top: 36px;
-  color: $light-gray-2;
+  color: $dark-blue-1;
 
   &:disabled {
+    color: $light-gray-2;
     opacity: 0.2;
   }
 }

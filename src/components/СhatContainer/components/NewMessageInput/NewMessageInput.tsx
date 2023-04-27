@@ -12,13 +12,17 @@ const NewMessageInput = ({
 
   const text = watch('text');
 
+  const handleClearInput = () => {
+    resetField('text');
+  };
+
   const handleFormSubmit = ({ text }: FormState) => {
     if (loading) {
       return;
     }
 
     onSubmit(text);
-    resetField('text');
+    handleClearInput();
   };
 
   return (
@@ -34,9 +38,21 @@ const NewMessageInput = ({
           <TypingIndicatior size="small" />
         </div>
       ) : (
-        <button className={styles.submitButton} type="submit" disabled={!text}>
-          <Icon name="send" />
-        </button>
+        <div className={styles.actionButtons}>
+          {text && (
+            <button className={styles.clearButton} onClick={handleClearInput}>
+              <Icon name="close" />
+            </button>
+          )}
+
+          <button
+            className={styles.submitButton}
+            type="submit"
+            disabled={!text}
+          >
+            <Icon name="send" />
+          </button>
+        </div>
       )}
     </form>
   );
