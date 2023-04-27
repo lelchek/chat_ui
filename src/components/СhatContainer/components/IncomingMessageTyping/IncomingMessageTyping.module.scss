@@ -1,0 +1,24 @@
+@import 'styles/scss/base';
+
+.root {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.container {
+  padding: 16px 24px;
+  border-radius: 18px;
+  background-color: $dark-gray-3;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 28px;
+  width: min-content;
+}
+
+.name {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: $light-gray-2;
+}

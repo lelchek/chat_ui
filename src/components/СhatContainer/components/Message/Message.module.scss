@@ -22,7 +22,6 @@
 
 .content {
   padding: 8px 24px;
-  background-color: $light-blue-1;
   border-radius: 18px;
 
   &.incoming {
@@ -46,6 +45,12 @@
       color: $light-blue-1;
     }
   }
+
+  &.outgoingFadeIn {
+    opacity: 0;
+    animation: fade-in 1s ease-in;
+    animation-fill-mode: forwards;
+  }
 }
 
 .text {
@@ -55,4 +60,13 @@
 .time {
   font-size: 0.8rem;
   text-align: right;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,4 +1,4 @@
-import { MessageType } from 'components/СhatContainer/types';
+export type MessageType = 'outgoing' | 'incoming';
 
 export interface MessageProps {
   text: string;

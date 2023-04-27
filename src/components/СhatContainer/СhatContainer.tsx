@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { getMessageTime } from 'helpers';
 import Message from 'components/СhatContainer/components/Message';
 import NewMessageInput from 'components/СhatContainer/components/NewMessageInput';
+import IncomingMessageTyping from 'components/СhatContainer/components/IncomingMessageTyping';
 import { ChatMessage } from './types';
 import styles from './СhatContainer.module.scss';
 
@@ -69,6 +70,12 @@ const СhatContainer = () => {
               <Message text={text} type={type} time={time} />
             </li>
           ))}
+
+          {incomingMessageInProgress && (
+            <li>
+              <IncomingMessageTyping />
+            </li>
+          )}
         </ul>
 
         <NewMessageInput onSubmit={handleSendOutgoingMessage} />
