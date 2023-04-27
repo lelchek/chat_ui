@@ -15,7 +15,7 @@
 }
 
 .name {
-  font-size: 0.8rem;
+  font-size: 12px;
   margin-bottom: 4px;
   color: $light-gray-2;
 }
@@ -24,7 +24,6 @@
   padding: 8px 24px;
   border-radius: 18px;
   width: 100%;
-  max-height: 150px;
   overflow: hidden;
 
   &.incoming {
@@ -33,6 +32,8 @@
     border-top-left-radius: 2px;
     border-bottom-left-radius: 28px;
     animation: grow 1.5s ease-in-out;
+    max-height: 86px;
+    overflow: hidden;
 
     .time {
       color: $light-gray-2;
@@ -55,12 +56,11 @@
 }
 
 .text {
-  overflow: hidden;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .time {
-  font-size: 0.8rem;
+  font-size: 12px;
   text-align: right;
 }
 
@@ -80,6 +80,6 @@
   }
   to {
     width: 100%;
-    max-height: 150px;
+    max-height: 86px;
   }
 }

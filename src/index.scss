@@ -1,18 +1,18 @@
-@import "styles/reset.scss";
-@import "styles/scss/base.scss";
+@import 'styles/reset.scss';
+@import 'styles/scss/base.scss';
 
 html,
 body {
   position: relative;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-stretch: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $dark-gray-1;
   color: $light-gray-1;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 html,
