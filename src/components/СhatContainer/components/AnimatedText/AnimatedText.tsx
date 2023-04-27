@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import { LINE_HEIGHT, BACKGROUND_ANIMATE_TIME } from 'constants/general';
+import { BASE_LINE_HEIGHT, BACKGROUND_ANIMATE_TIME } from 'constants/general';
 import { AnimatedTextProps } from './types';
 import styles from './AnimatedText.module.scss';
 
-const AnimatedText = ({ text }: AnimatedTextProps) => {
+const AnimatedText = ({ text, onFinished }: AnimatedTextProps) => {
   const textRef = useRef<HTMLParagraphElement>(null);
 
   const [maskRows, setMaskRows] = useState<number>(1);
@@ -15,7 +15,7 @@ const AnimatedText = ({ text }: AnimatedTextProps) => {
     const maskRowsTimeout = setTimeout(() => {
       const scrollHeight = textRef.current?.scrollHeight;
 
-      const rows = scrollHeight ? scrollHeight / LINE_HEIGHT : 1;
+      const rows = scrollHeight ? scrollHeight / BASE_LINE_HEIGHT : 1;
 
       setMaskRows(Math.ceil(rows));
     }, BACKGROUND_ANIMATE_TIME + 100);
@@ -41,8 +41,8 @@ const AnimatedText = ({ text }: AnimatedTextProps) => {
         <span
           className={styles.staticMask}
           style={{
-            height: LINE_HEIGHT * (maskRows - animatedRowNumber),
-            top: LINE_HEIGHT * animatedRowNumber,
+            height: BASE_LINE_HEIGHT * (maskRows - animatedRowNumber),
+            top: BASE_LINE_HEIGHT * animatedRowNumber,
           }}
         />
 
@@ -61,6 +61,10 @@ const AnimatedText = ({ text }: AnimatedTextProps) => {
                 }}
                 onEntered={() => {
                   setAnimatedRowNumber(currentRowNumber + 1);
+
+                  if (currentRowNumber === maskRows) {
+                    onFinished();
+                  }
                 }}
               >
                 <span className={styles.gradientMask} />
