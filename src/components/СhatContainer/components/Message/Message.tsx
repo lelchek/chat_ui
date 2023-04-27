@@ -3,7 +3,7 @@ import assistant from 'data/assistant.json';
 import { MessageProps } from './types';
 import styles from './Message.module.scss';
 
-const Message = ({ text, type }: MessageProps) => {
+const Message = ({ text, type, time }: MessageProps) => {
   return (
     <div className={cn(styles.root, styles[type])}>
       <div className={styles.container}>
@@ -12,7 +12,7 @@ const Message = ({ text, type }: MessageProps) => {
         <div className={cn(styles.content, styles[type])}>
           <p className={styles.text}>{text}</p>
           {/* TODO: remove hardcode */}
-          <p className={styles.time}>12:33 AM</p>
+          <p className={styles.time}>{time}</p>
         </div>
       </div>
     </div>

@@ -4,4 +4,5 @@ export interface ChatMessage {
   id: number;
   text: string;
   type: MessageType;
+  time: string;
 }
