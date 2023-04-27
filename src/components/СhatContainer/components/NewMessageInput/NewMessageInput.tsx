@@ -13,6 +13,10 @@ const NewMessageInput = ({
   const text = watch('text');
 
   const handleFormSubmit = ({ text }: FormState) => {
+    if (loading) {
+      return;
+    }
+
     onSubmit(text);
     resetField('text');
   };
