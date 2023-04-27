@@ -3,7 +3,11 @@
 .root {
   display: flex;
   flex-direction: column;
-  width: calc(100% - $menu-width - $chat-list-width);
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    width: calc(100% - $menu-width - $chat-list-width);
+  }
 }
 
 .header {
