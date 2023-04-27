@@ -24,13 +24,21 @@
   }
 }
 
+.loading,
+.submitButton {
+  position: absolute;
+  right: 48px;
+}
+
+.loading {
+  top: 44px;
+}
+
 .submitButton {
   @extend %button-reset;
 
   display: block;
-  position: absolute;
   top: 36px;
-  right: 48px;
   color: $light-gray-2;
 
   &:disabled {

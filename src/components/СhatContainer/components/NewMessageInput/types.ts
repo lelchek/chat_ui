@@ -4,4 +4,5 @@ export interface FormState {
 
 export interface NewMessageInputProps {
   onSubmit: (text: string) => void;
+  loading?: boolean;
 }

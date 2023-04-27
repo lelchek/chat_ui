@@ -1,9 +1,13 @@
 import { useForm } from 'react-hook-form';
 import Icon from 'components/common/Icon';
+import TypingIndicatior from 'components/СhatContainer/components/TypingIndicatior';
 import { FormState, NewMessageInputProps } from './types';
 import styles from './NewMessageInput.module.scss';
 
-const NewMessageInput = ({ onSubmit }: NewMessageInputProps) => {
+const NewMessageInput = ({
+  onSubmit,
+  loading = false,
+}: NewMessageInputProps) => {
   const { register, handleSubmit, watch, resetField } = useForm<FormState>();
 
   const text = watch('text');
@@ -21,10 +25,15 @@ const NewMessageInput = ({ onSubmit }: NewMessageInputProps) => {
         className={styles.input}
         {...register('text')}
       />
-
-      <button className={styles.submitButton} type="submit" disabled={!text}>
-        <Icon name="send" />
-      </button>
+      {loading ? (
+        <div className={styles.loading}>
+          <TypingIndicatior size="small" />
+        </div>
+      ) : (
+        <button className={styles.submitButton} type="submit" disabled={!text}>
+          <Icon name="send" />
+        </button>
+      )}
     </form>
   );
 };

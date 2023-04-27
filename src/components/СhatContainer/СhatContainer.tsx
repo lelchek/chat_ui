@@ -78,7 +78,10 @@ const СhatContainer = () => {
           )}
         </ul>
 
-        <NewMessageInput onSubmit={handleSendOutgoingMessage} />
+        <NewMessageInput
+          onSubmit={handleSendOutgoingMessage}
+          loading={incomingMessageInProgress}
+        />
       </div>
     </div>
   );
