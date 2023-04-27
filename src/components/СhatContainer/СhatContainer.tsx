@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { getMessageTime } from 'helpers';
-import Message from 'components/СhatContainer/components/Message';
+import IncomingMessage from 'components/СhatContainer/components/IncomingMessage';
+import OutgoingMessage from 'components/СhatContainer/components/OutgoingMessage';
 import NewMessageInput from 'components/СhatContainer/components/NewMessageInput';
 import IncomingMessageTyping from 'components/СhatContainer/components/IncomingMessageTyping';
 import { ChatMessage } from './types';
@@ -68,7 +69,11 @@ const СhatContainer = () => {
         <ul ref={messageListRef} className={styles.messageList}>
           {messages.map(({ id, text, type, time }) => (
             <li key={id}>
-              <Message text={text} type={type} time={time} />
+              {type === 'incoming' ? (
+                <IncomingMessage text={text} time={time} />
+              ) : (
+                <OutgoingMessage text={text} time={time} />
+              )}
             </li>
           ))}
 

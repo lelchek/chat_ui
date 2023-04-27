@@ -1,0 +1,51 @@
+@import 'styles/scss/base';
+
+.root {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  width: max-content;
+  max-width: 80%;
+}
+
+.name {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: $light-gray-2;
+}
+
+.content {
+  padding: 8px 24px;
+  width: 100%;
+  background-color: $light-blue-1;
+  color: $dark-gray-2;
+  border-radius: 18px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 28px;
+  animation: grow 1s ease-in-out normal;
+  overflow: hidden;
+  max-height: 40px;
+  transition: max-height 1.5s ease-out;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.time {
+  font-size: 12px;
+  text-align: right;
+  color: $light-gray-2;
+}
+
+@keyframes grow {
+  0% {
+    width: 50px;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

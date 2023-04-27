@@ -1,0 +1,44 @@
+@import 'styles/scss/base';
+
+.root {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.container {
+  width: max-content;
+  max-width: 80%;
+}
+
+.content {
+  padding: 8px 24px;
+  width: 100%;
+  background-color: $dark-blue-2;
+  color: $light-gray-1;
+  border-radius: 18px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 28px;
+  opacity: 0;
+  animation: fade-in 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.time {
+  font-size: 12px;
+  text-align: right;
+  color: $light-blue-1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

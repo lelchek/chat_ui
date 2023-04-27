@@ -6,7 +6,6 @@
 
 .text {
   position: relative;
-
   opacity: 0;
   overflow: hidden;
 
@@ -20,7 +19,6 @@
   width: 100%;
   left: 0;
   background-color: $light-blue-1;
-  // background-color: green;
 }
 
 .animatedMmask {
@@ -37,7 +35,6 @@
 
 .gradientMask {
   background-color: $light-blue-1;
-  // background-color: red;
   display: block;
   height: 24px;
 }

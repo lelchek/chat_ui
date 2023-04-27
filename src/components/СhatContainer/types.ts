@@ -1,4 +1,4 @@
-import { MessageType } from 'components/СhatContainer/components/Message/types';
+export type MessageType = 'outgoing' | 'incoming';
 
 export interface ChatMessage {
   id: number;

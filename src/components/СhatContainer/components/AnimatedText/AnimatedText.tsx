@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import { LINE_HEIGHT, BACKGROUND_ANIMATE_TIME } from 'constants/general';
-
 import { AnimatedTextProps } from './types';
 import styles from './AnimatedText.module.scss';
 
