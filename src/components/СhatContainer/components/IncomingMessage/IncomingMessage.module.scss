@@ -31,13 +31,27 @@
 }
 
 .text {
-  font-size: 16px;
+  font-size: $base-font-size;
+}
+
+.lastRow {
+  display: flex;
+  justify-content: space-between;
 }
 
 .time {
   font-size: 12px;
   text-align: right;
   color: $light-gray-2;
+  flex-grow: 1;
+}
+
+.moreButton {
+  @extend %button-reset;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: $dark-blue-1;
 }
 
 @keyframes grow {

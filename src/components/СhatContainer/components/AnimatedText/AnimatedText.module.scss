@@ -7,7 +7,11 @@
 .text {
   position: relative;
   opacity: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: $max-line;
+  -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
 
   &.visible {
     opacity: 1;
@@ -36,7 +40,7 @@
 .gradientMask {
   background-color: $light-blue-1;
   display: block;
-  height: 24px;
+  height: $base-line-height;
 }
 
 .gradientMaskEnter {
