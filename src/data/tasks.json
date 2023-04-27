@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "status": "unread",
+        "status": "read",
         "title": "Task 2",
         "description": "Got it. I'll put whole-day block on",
         "participant": {
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "status": "read",
+        "status": "unread",
         "title": "Task 3",
         "description": "Got it. I'll put whole-day block on",
         "participant": {
@@ -71,7 +71,7 @@
     },
     {
         "id": 8,
-        "status": "read",
+        "status": "unread",
         "title": "Task 6",
         "description": "Got it. I'll put whole-day block on",
         "participant": {

@@ -23,12 +23,16 @@
 .content {
   padding: 8px 24px;
   border-radius: 18px;
+  width: 100%;
+  max-height: 150px;
+  overflow: hidden;
 
   &.incoming {
     background-color: $light-blue-1;
     color: $dark-gray-2;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 28px;
+    animation: grow 1.5s ease-in-out;
 
     .time {
       color: $light-gray-2;
@@ -40,20 +44,18 @@
     color: $light-gray-1;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 28px;
+    opacity: 0;
+    animation: fade-in 1s ease-in;
+    animation-fill-mode: forwards;
 
     .time {
       color: $light-blue-1;
     }
   }
-
-  &.outgoingFadeIn {
-    opacity: 0;
-    animation: fade-in 1s ease-in;
-    animation-fill-mode: forwards;
-  }
 }
 
 .text {
+  overflow: hidden;
   font-size: 0.9rem;
 }
 
@@ -68,5 +70,16 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 50px;
+    max-height: 64px;
+  }
+  to {
+    width: 100%;
+    max-height: 150px;
   }
 }

@@ -9,11 +9,7 @@ const Message = ({ text, type, time }: MessageProps) => {
       <div className={styles.container}>
         {type === 'incoming' && <p className={styles.name}>{assistant.name}</p>}
 
-        <div
-          className={cn(styles.content, styles[type], {
-            [styles.outgoingFadeIn]: type === 'outgoing',
-          })}
-        >
+        <div className={cn(styles.content, styles[type])}>
           <p className={styles.text}>{text}</p>
           <p className={styles.time}>{time}</p>
         </div>
