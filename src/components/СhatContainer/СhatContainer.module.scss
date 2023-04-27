@@ -4,11 +4,12 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  width: calc(100vw - $menu-width - $chat-list-width);
 }
 
 .header {
   border-bottom: 1px solid $dark-gray-2;
-  height: 50px;
+  height: $header-height;
 }
 
 .contentWrapper {
@@ -16,11 +17,14 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  padding: 24px 24px 48px;
 }
 
 .messageList {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-height: calc(100vh - $header-height - $input-container-height);
+  padding: 24px;
+  overflow: auto;
+  scroll-behavior: smooth;
 }

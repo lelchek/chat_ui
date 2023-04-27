@@ -2,6 +2,8 @@
 
 .root {
   position: relative;
+  padding: 24px;
+  height: $input-container-height;
 }
 
 .input {
@@ -27,9 +29,8 @@
 
   display: block;
   position: absolute;
-  top: 50%;
-  right: 24px;
-  transform: translateY(-50%);
+  top: 36px;
+  right: 48px;
   color: $light-gray-2;
 
   &:disabled {
