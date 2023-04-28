@@ -39,12 +39,6 @@ const NewMessageInput = ({
         </div>
       ) : (
         <div className={styles.actionButtons}>
-          {text && (
-            <button className={styles.clearButton} onClick={handleClearInput}>
-              <Icon name="close" />
-            </button>
-          )}
-
           <button
             className={styles.submitButton}
             type="submit"
@@ -52,6 +46,12 @@ const NewMessageInput = ({
           >
             <Icon name="send" />
           </button>
+
+          {text && (
+            <button className={styles.clearButton} onClick={handleClearInput}>
+              <Icon name="close" />
+            </button>
+          )}
         </div>
       )}
     </form>
